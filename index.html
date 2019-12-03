@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class = 'status hidden'></header>
+    <main>
+        <section class='startGame'>
+            <h1>Are you ready to embark on a real weird journey?</h1>
+            <button type='button' class='start'>Begin!</button>
+        </section>
+
+        <section class='characterCreate hidden'>
+            <h1>Lets pick your stats</h1>
+            <h2>Allocate 20 points to your stats</h2>
+            <h3 class = 'remain'></h3>
+            <div class='statAllocation'>
+                Constitution: <input type="number" id="con" max='10'>
+                Strength: <input type="number" id="str" max='10'>
+                Dexterity: <input type="number" id="dex" max='10'>
+                Intellect: <input type="number" id="int" max='10'>
+                Sneak: <input type="number" id="snk" max='10'>
+                <button type='button' class='stats'>Submit</button>
+            </div>
+        </section>
+
+        <section class = 'firstEncounter hidden'>
+
+            <div class = 'wiseGuy'>
+                <img src = 'TheWise.png'>
+                <p class ='wiseAnswer'>My name is WiseMan DingleShuffle, but you can call me Matty-Cat... I'll be helping you out while you're down here. Do you remember how you got here?</p>
+            </div>
+
+            <div class = 'responses'>
+                    <label>You:
+                            <input list="reply" class ='reply' /></label>
+                            <datalist id="reply">
+                              <option  value="1) Just woke up here">
+                              <option  value="2) Late night...">
+                              <option  value="3) I sleep walk whenever I take ambien">
+                            </datalist> 
+                            <button type='button' class ='response'>talk</button>
+ 
+            </div>
+
+        </section>
+
+        <section class = 'openWorld hidden'>
+            <h1 class = 'storyLine'>You still really have no idea where you, who that old guy was, or what you're even supposed to be doing. to be honest, I didnt really think of a backstory.
+                 I was more interesting in coding stuff so dialogue and continuity is going to be bad, woo!</h1>
+                 <button type='button' class = 'continue'>continue</button>
+                 <div class = 'battle hidden'>
+                    <img src = 'Weirdie1.png'>
+                 </div>
+
+                 <div class = 'charHud hidden'>
+                     <button type = button class = inventory>Inventory</button>
+                     <button type = button class = 'talk hidden'>Talk</button>
+                     <button type = button class = 'fight hidden'>Fight</button>
+                     <input list="fighter" class ='fighter hidden' />
+                                    <datalist id="fighter">
+                                      <option  value="Use a magic attack">
+                                      <option  value='Use a physical attack' >
+                                      <option  value="Do some crazy spin attacks">
+                                    </datalist> 
+                                    <button type='button' class ='pound hidden'>Attack</button>
+                     
+                     <div class = 'mapDiv'>
+                        
+                     </div>
+
+                     <div class = 'moveDiv'>
+
+                            <button type = button class = up><i class="fas fa-arrow-up"></i></button>
+                            <button type = button class = right><i class="fas fa-arrow-right"></i></button>
+                            <button type = button class = down><i class="fas fa-arrow-down"></i></button>
+                            <button type = button class = left><i class="fas fa-arrow-left"></i></button><br>
+                            
+                            
+
+                     </div>
+
+                     <div class = 'enemy hidden'>
+                        <h1>Weirdies Stats</h1>
+                     </div>
+
+                 </div>
+        </section>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src='index.js'></script>
+</body>
+
+</html>

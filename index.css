@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+.hidden {
+    display:none;
+}
+
+
+.statAllocation{
+    display:flex;
+    flex-direction:column;
+}
+
+.statAllocation input {
+    width:10%;
+}
+
+.stats {
+    margin-top:3%;
+    width:10%;
+}
+
+header{
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.firstEncounter{
+    height:100vh;
+    width:100vw;
+}
+
+.wiseGuy {
+    position:absolute;
+    top:15%;
+    left:5%;
+    margin-left:auto;
+    margin-right:auto;
+    border:solid black 1px;
+    width:20vw;
+    height:40vh;
+
+}
+
+.wiseGuy img {
+    height:100%;
+    width:100%;
+}
+
+.wiseGuy p {
+    word-spacing: 3px;
+    line-height: 20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.responses {
+    position:absolute;
+    top:25%;
+    left:60%;
+}
+
+.openWorld{
+    height:95vh;
+    width:95vw;
+}
+.charHud{
+    text-align: center;
+    border: 1px solid black;
+    position:absolute;
+    height:25vh;
+    width:80%;
+    bottom:10%;
+    left:10%;
+}
+
+
+
+.mapDiv{
+    font-size:45px;
+    position: absolute;
+    left:75%;
+    top:0%;
+    width:20vw;
+    height:25vh;
+}
+
+.moveDiv{
+    
+    font-size:45px;
+    position: absolute;
+    right:75%;
+    top:0%;
+    width:20vw;
+    height:25vh;
+}
+
+.battle {
+    border:solid black 1px;
+    position:absolute;
+    right:40%;
+    width: 20vw;
+    height:40vh;
+}
+
+.battle img{
+    height:40vh;
+    width:20vw;
+}
+
+.moveDiv .up {
+    position:absolute;
+    top:30%;
+    left:50%;
+}
+
+.moveDiv .down {
+    position:absolute;
+    top:60%;
+    left:50%;
+}
+
+.moveDiv .left {
+    position:absolute;
+    top:45%;
+    left:35%;
+}
+
+.moveDiv .right {
+    position:absolute;
+    top:45%;
+    left:65%;
+}
+
+.moveDiv button {
+    padding:10px;
+}
+
+.charHud .inventory, .talk, .fight {
+    padding:15px;
+}
+
+.pound{
+    left:50%;
+    
+}
+
+.enemy{
+    border:solid 1px black;
+    position: absolute;;
+    width:25vw;
+    height:15vh;
+    top:25%;
+    right:35%;
+}
+
