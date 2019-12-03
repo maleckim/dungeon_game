@@ -107,6 +107,8 @@ function stats() {
         charStats['snk'] = parseInt($('#snk').val())
         charStats['dex'] = parseInt($('#dex').val())
 
+        currentHealth = charStats['con'] * 3
+
         if (total > 20) {
             alert('only 20 please')
         } else if (total < 20) {
@@ -146,8 +148,8 @@ function talkToWiseMan() {
 
 }
 
-function showStats() {
-    currentHealth = charStats['con'] * 3
+function showStats(currentHealth) {
+    
     equip = 'Ol\' Rusty'
     $('.status').html(`<ul><li>HP:${currentHealth}</li> <li>Money:${purse}</li><li>Weapon:${equip}</ul>`)
     // $('.status').html(`<ul><li>Constitution:${charStats['con']}</li> <li>Strength:${charStats['str']}</li> <li>Intellect:${charStats['int']}</li> <li>Sneak:${charStats['snk']}</li> Dexterity:${charStats['dex']}`)
@@ -173,7 +175,7 @@ function nextEncounter() {
     alert('the strange man left you with a map, coins and a rusty dagger')
     purse = purse + 100;
     inventory['Ol rusty'] = true;
-    showStats();
+    showStats(currentHealth);
 }
 
 function cont() {
@@ -245,6 +247,12 @@ function updateMap() {
     }
     monsterFight();
 }
+let weirdieStats = {
+    'health': 35,
+    'attack': 6,
+    'defense':10
+}
+let weirdieHealth = parseInt(weirdieStats['health']);
 
 function monsterFight() {
     if (currentX == 0 && currentY == 3) {
@@ -266,14 +274,18 @@ function monsterFight() {
 
         $('.pound').on('click', function (e) {
             x = $('.fighter').val();
+            
 
             if (x == 'Use a magic attack') {
-                let x = weirdieStats['health'];
                 mAttack = charStats['int'] * 2
-                
+                updateHealth(mAttack);
                   
             }else if( x == 'Use a physical attack'){
                 pAttack = charStats['str'] * 1.5
+                if(equip == 'Ol\' Rusty'){
+                    pAttack = pAttack - 1
+                }
+                updateHealth(pAttack);
             }
         })
     }
@@ -283,10 +295,29 @@ function monsterFight() {
 
 }
 
-let weirdieStats = {
-    'health': 35,
-    'attack': 6,
-    'defense':10
+
+
+function updateHealth(attack){
+    currentHealth = currentHealth - weirdieStats['attack'] * .3;
+    showStats(currentHealth);
+
+    weirdieHealth = weirdieHealth - attack
+    if(weirdieHealth <= 0){
+        $('.enemy').html('');
+        victory();
+    }
+
+    $('.enemy').html(`Health Left:${weirdieHealth}`);
+
+}
+
+function victory(){
+    $('.enemy').html('');
+    $('.battle').html('<h1>you gained 20xp and weirdie dropped a cool cloak! it was added to your inventory</h1>');
+    
+    inventory['cloak'] = true;
+    
+
 }
 
 
